@@ -3,7 +3,7 @@ title: KMP算法详解
 published: 2026-07-21
 description: '字符串匹配 KMP 算法核心原理、next 数组推导、完整匹配流程、代码实现与复杂度分析'
 tags: [算法, 字符串匹配, KMP]
-category: '数据结构与算法'
+category: 数据结构与算法
 draft: false 
 ---
 
