@@ -12,6 +12,8 @@ concurrency:
 
 permissions:
   contents: read
+  pages: write      # 允许写入 Pages
+  id-token: write   # 允许 OIDC 身份验证（新版 Pages 部署需要）
 
 jobs:
   # check:
@@ -65,7 +67,7 @@ jobs:
 
       - name: Run Astro Build
         run: pnpm astro build
-        
+
   deploy:
     needs: build
     runs-on: ubuntu-latest
