@@ -1,5 +1,5 @@
 ---
-title: "Fuwari笔记格式"
+title: Fuwari笔记格式
 published: 2026-07-01
 category: 工具与环境配置
 ---
