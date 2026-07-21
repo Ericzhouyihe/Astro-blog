@@ -1,8 +1,7 @@
 ---
 title: "Fuwari笔记格式"
 published: 2026-07-01
-tags: []
-category: '效率和环境'
+category: '工具与环境配置
 ---
 
 # Front-matter格式

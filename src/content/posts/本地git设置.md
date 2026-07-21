@@ -1,7 +1,7 @@
 ---
 title: 本地git设置
 published: 2026-07-01
-category: 效率和环境
+category: 工具与环境配置
 ---
 
 # 查询git全局配置
