@@ -66,7 +66,12 @@ export async function getTagList(): Promise<Tag[]> {
 
 	// sort tags
 	const keys: string[] = Object.keys(countMap).sort((a, b) => {
-		return a.toLowerCase().localeCompare(b.toLowerCase());
+		// 数量不同时，按数量降序
+		if (countMap[b] !== countMap[a]) {
+			return countMap[b] - countMap[a]
+		}
+		// 数量相同时，按名称字母序保证顺序稳定
+		return a.toLowerCase().localeCompare(b.toLowerCase())
 	});
 
 	return keys.map((key) => ({ name: key, count: countMap[key] }));
