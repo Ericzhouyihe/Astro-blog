@@ -75,10 +75,8 @@ $$
 
 ## 4. 关键步骤的 Python 实现
 
-### 4.1 基本设置与哈希函数
-
 ```python
-# 选择基数与模数
+# 1. 选择基数与模数
 BASE = 256          # 扩展 ASCII 范围
 MOD = 10**9 + 7     # 大质数
 
@@ -92,13 +90,8 @@ def compute_hash(s: str) -> int:
     for ch in s:
         h = (h * BASE + char_val(ch)) % MOD
     return h
-```
 
-**解释**：以上算法等同于霍纳法则，避免了显式计算高次幂，时间复杂度 $O(m)$。
-
-### 4.2 滚动更新
-
-```python
+# 2. 滚动更新
 def roll_hash(old_hash: int, left_char: str, right_char: str, high_base: int) -> int:
     """
     由旧窗口哈希滚动计算新窗口哈希。
@@ -113,11 +106,8 @@ def roll_hash(old_hash: int, left_char: str, right_char: str, high_base: int) ->
     # 加入新字符
     new_hash = (new_hash + char_val(right_char)) % MOD
     return new_hash
-```
 
-### 4.3 完整的 Rabin-Karp 搜索
-
-```python
+# 3. Rabin-Karp 搜索
 def rabin_karp(text: str, pattern: str) -> list[int]:
     """返回 pattern 在 text 中所有匹配的起始索引"""
     n, m = len(text), len(pattern)
@@ -140,22 +130,19 @@ def rabin_karp(text: str, pattern: str) -> list[int]:
             if text[i:i+m] == pattern:
                 matches.append(i)
 
-        # 如果不是最后一个窗口，滚动哈希
+        # 如果不是最后一个窗口，滚动更新哈希
         if i < n - m:
             window_hash = roll_hash(window_hash, text[i], text[i+m], high_base)
 
     return matches
-```
 
-### 4.4 测试运行
-
-```python
 text = "ABCCDDAEFGCDD"
 pattern = "CDD"
 print(rabin_karp(text, pattern))  # 输出 [3, 9]
 ```
 
 **执行过程举例**（简化版本，BASE=256 时类似）：
+
 - 窗口 `CDD` 在索引 3 和 9 处出现，哈希命中并验证通过。
 - 其他位置哈希值大概率不等，直接跳过。
 
