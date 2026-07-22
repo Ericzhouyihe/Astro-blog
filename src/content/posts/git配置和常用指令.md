@@ -60,9 +60,9 @@ ssh-keygen -t ed25519 -C "your_email@example.com"
 不需要安全密码短语设置，这里直接回车就行了
 
 生成完成之后会提示公钥被保存到指定的位置了
-![](assets/Git配置/image-20260722205626174.png)
+![](assets/git配置和常用指令/image-20260722205626174.png)
 去对应的地址找到密钥复制
-![image-20260722205400371](assets/Git配置/image-20260722205400371-1784724845509.png)
+![](assets/git配置和常用指令/image-20260722205400371.png)
 
 用该公钥去对应的仓库（GitHub、gitee、gitcode）中配置ssh即可
 
