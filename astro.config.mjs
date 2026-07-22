@@ -56,7 +56,12 @@ export default defineConfig({
 			},
 		}),
 		expressiveCode({
-			themes: [expressiveCodeConfig.theme, expressiveCodeConfig.theme],
+			themes: [
+				expressiveCodeConfig.themes.light,
+				expressiveCodeConfig.themes.dark,
+			],
+			useDarkModeMediaQuery: false,
+
 			plugins: [
 				pluginCollapsibleSections(),
 				pluginLineNumbers(),
@@ -65,6 +70,7 @@ export default defineConfig({
 			],
 			defaultProps: {
 				wrap: true,
+				frame: "terminal",
 				overridesByLang: {
 					'shellsession': {
 						showLineNumbers: false,
@@ -74,26 +80,15 @@ export default defineConfig({
 			styleOverrides: {
 				codeBackground: "var(--codeblock-bg)",
 				borderRadius: "0.75rem",
-				borderColor: "none",
+				borderColor: "var(--codeblock-border)",
 				codeFontSize: "0.875rem",
-				codeFontFamily: "'JetBrains Mono Variable', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace",
+				codeFontFamily: "'JetBrains Mono Variable', 'Sarasa Mono SC', 'Microsoft YaHei', monospace",
 				codeLineHeight: "1.5rem",
 				frames: {
-					editorBackground: "var(--codeblock-bg)",
 					terminalBackground: "var(--codeblock-bg)",
 					terminalTitlebarBackground: "var(--codeblock-topbar-bg)",
-					editorTabBarBackground: "var(--codeblock-topbar-bg)",
-					editorActiveTabBackground: "none",
-					editorActiveTabIndicatorBottomColor: "var(--primary)",
-					editorActiveTabIndicatorTopColor: "none",
-					editorTabBarBorderBottomColor: "var(--codeblock-topbar-bg)",
-					terminalTitlebarBorderBottomColor: "none"
+					terminalTitlebarBorderBottomColor: "var(--codeblock-border)",
 				},
-				textMarkers: {
-					delHue: 0,
-					insHue: 180,
-					markHue: 250
-				}
 			},
 			frames: {
 				showCopyToClipboardButton: false,
