@@ -7,3 +7,19 @@
         font-family: "JetBrains Mono Variable", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
     }
 }
+
+.custom-md .expressive-code .frame.is-terminal .header::before {
+	left: 1rem;
+	width: 0.75rem;
+	height: 0.75rem;
+	border-radius: 999px;
+
+	background-color: #ff5f57;
+	box-shadow:
+		1.15rem 0 #febc2e,
+		2.3rem 0 #28c840;
+
+	opacity: 1;
+	-webkit-mask-image: none;
+	mask-image: none;
+}
