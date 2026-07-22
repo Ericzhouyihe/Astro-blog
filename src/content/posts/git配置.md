@@ -1,5 +1,5 @@
 ---
-title: git配置
+title: git配置和常用指令
 published: 2026-07-22
 description: '本地git的配置和git相关的仓库的配置指令'
 category: 工具与环境配置
@@ -15,7 +15,27 @@ git config --global user.name "your_name"
 git config --global user.email "your_email@example.com"
 ```
 
-# 生成ssh密钥
+配置好之后可以通过指令检查(或者用下面的查询全局配置)
+
+```shell
+git config --global user.name
+git config --global user.email
+```
+
+# 查询git全局配置
+
+```shell
+git config --global -l
+```
+
+# 设置本地GitHub加速端口
+
+因为平时提交和拉取老是超时，所以需要进行代理，将访问GitHub链接的设置到本地的代理端口即可
+```shell
+git config --global http.https://github.com.proxy http://127.0.0.1:7890
+```
+
+# 生成ssh密钥并填写GitHub
 
 可以在本地计算机上生成新的 SSH 密钥。生成密钥后，您可以将公钥添加到您在 GitHub/Gitee/Gitcode上的帐户，以启用通过 SSH 进行 Git 操作的身份验证。
 
