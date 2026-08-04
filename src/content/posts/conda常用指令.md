@@ -102,6 +102,8 @@ conda remove -n <your_env_name> --all
 
 # 在虚拟环境中安装uv
 
+Windows环境下, 打开PowerShell并用管理员身份运行, 使用指令安装uv, 即可全局使用, 所有的conda环境都能用uv
+
 ```shell
-pip install uv
+irm https://astral.sh/uv/install.ps1 | iex
 ```
