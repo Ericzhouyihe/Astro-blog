@@ -94,9 +94,3 @@ tags: [Python基础]
 # 删除指定的虚拟环境
 
 - conda remove -n <your_env_name> --all
-
-
-
-# 在虚拟环境中安装uv
-
-pip install uv
