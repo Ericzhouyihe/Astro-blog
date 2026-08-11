@@ -38,4 +38,3 @@ DBeaver 底层是 Java‑JDBC 驱动，出于安全，默认禁止自动下载�
 关闭 SSL（useSSL=false）
 不走加密通道，这时就必须依靠 RSA 公钥单独加密密码。
 所以你必须开启 allowPublicKeyRetrieval。
-

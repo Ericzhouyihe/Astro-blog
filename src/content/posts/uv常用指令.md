@@ -13,8 +13,8 @@ Set-ExecutionPolicy Bypass -Scope Process -Force
 需要安装到c盘外需要指定路径, 安装完要修改默认路径, 不然后续安装东西还是在c盘
 ```shell
 # 安装到 D:\app\uv，缓存放到 D:\data\uv-cache
-mkdir D:\\APP\\uv\\bin
-mkdir D:\\APP\\uv\\cache
+mkdir D:\APP\uv\bin
+mkdir D:\APP\uv\cache
 powershell -ExecutionPolicy ByPass -c {
   $env:UV_INSTALL_DIR = "D:\APP\uv\bin";
   $env:UV_CACHE_DIR = "D:\APP\uv\bin\cache";
@@ -25,10 +25,10 @@ powershell -ExecutionPolicy ByPass -c {
 # 设置各种路径
 `最好自己提前手动创建对应的文件夹`
 ```shell
-mkdir D:\\APP\\uv\\bin
-mkdir D:\\APP\\uv\\python
-mkdir D:\\APP\\uv\\tools
-mkdir D:\\APP\\uv\\cache
+mkdir D:\APP\uv\bin
+mkdir D:\APP\uv\python
+mkdir D:\APP\uv\tools
+mkdir D:\APP\uv\cache
 # Python解释器存放位置
 setx UV_PYTHON_INSTALL_DIR "D:\APP\uv\python"
 # 全局脚手架工具
@@ -55,7 +55,10 @@ where uv
 uv self uninstall
 ```
 
+或者直接手动把uv相关的文件删掉
+
 # 查看版本
+
 ```shell
 uv --version
 ```
@@ -78,7 +81,7 @@ uv python install 3.10 3.11 3.12 3.13
 uv python dir
 ```
 
-## 查看本机全部识别到的 Python(uv的,conda下载的都会识别到)
+## 查看本机全部识别到的 Python(uv,conda等下载的都会识别到)
 ```shell
 uv python list
 ```
@@ -103,7 +106,7 @@ uv tree
 ```shell
 uv pip list
 ```
-## 安装依赖（fastapi、接口测试工具）
+## 安装依赖（fastapi、接口测试工具为例）
 安装一个
 ```shell
 uv add fastapi
@@ -123,17 +126,29 @@ uv remove uvicorn
 uv run uvicorn main:app --reload
 ```
 
-## 根据锁文件同步完整依赖（别人克隆项目后用）
+## 一键复原完整项目环境（克隆项目后用）
+
+1. uv 项目依靠两份文件管理环境
+
+- `pyproject.toml`：写明你需要哪些依赖包
+- `uv.lock`（锁文件）：**锁定所有包精确版本、子依赖版本**，连依赖的依赖版本全部固定死
+
+当使用Git同步好远程的uv项目时，拉取下来这两个文件之后，可以直接用该指令进行复原环境
+
 ```shell
 uv sync
 ```
 
-## 导出 requirements.txt
+## requirements.txt相关
+
+导出依赖清单到 requirements.txt
+
 ```shell
 uv export --format requirements-txt > requirements.txt
 ```
 
-## 从 requirements.txt 批量安装
+从 requirements.txt 批量安装依赖
+
 ```shell
 uv add -r requirements.txt
 ```
@@ -142,7 +157,7 @@ uv add -r requirements.txt
 ```shell
 .venv\Scripts\Activate.ps1
 ```
-激活之后直接使用pip可以查看依赖
+激活之后直接使用pip可以查看依赖信息
 ```shell
 pip list
 ```
@@ -150,15 +165,28 @@ pip list
 # uv创建项目
 ## 在当前文件夹初始化python项目
 ```shell
+# 1.新建文件夹，进入项目目录
+mkdir my_demo
+cd my_demo
+
+# 2.初始化项目，生成pyproject.toml
 uv init
+
+# 3.安装第三方包，自动更新uv.lock锁文件
+uv add requests
+
+# 4.一键搭建完整虚拟环境
+uv sync
 ```
 
 # 运行代码
 ```shell
-# 激活环境前
 uv run python main.py
+```
 
-# 激活环境后直接
+如果是激活了虚拟环境，直接用Python命令可以运行
+
+```shell
 python main.py
 ```
 
