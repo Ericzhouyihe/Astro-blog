@@ -12,7 +12,7 @@ docker run -d `
   --name mysql8 `
   --restart always `
   -p 3306:3306 `
-  -v D:\docker\mysql-data:/var/lib/mysql `
+  -v D:\data\docker\mysql-data:/var/lib/mysql `
   -e MYSQL_ROOT_PASSWORD=Root@123456 `
   -e TZ=Asia/Shanghai `
   mysql:8.0
