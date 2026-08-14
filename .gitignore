@@ -1,4 +1,5 @@
-.gitignore
+.claude
+
 dist
 .astro
 node_modules

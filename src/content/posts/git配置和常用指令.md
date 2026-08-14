@@ -71,3 +71,27 @@ GitHub配置地址：[https://github.com/settings/ssh/new](https://github.com/se
 Gitee配置地址：[https://gitee.com/profile/sshkeys](https://gitee.com/profile/sshkeys)
 
 Gitcode配置地址：https://gitcode.net/-/profile/keys
+
+
+
+# git常用指令
+
+### …or create a new repository on the command line
+
+```
+echo "# shenlan" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin git@github.com:Ericzhouyihe/shenlan.git
+git push -u origin main
+```
+
+### …or push an existing repository from the command line
+
+```
+git remote add origin git@github.com:Ericzhouyihe/shenlan.git
+git branch -M main
+git push -u origin main
+```
