@@ -70,8 +70,19 @@ uv --version
 uv venv .venv-cpu --python 3.12
 ```
 
-## 安装依赖（fastapi、接口测试工具为例）
-安装一个
+需要删除虚拟环境直接删除对应文件夹就行
+
+需要改名也是先删除，然后sync一个新的
+
+```shell
+uv sync --project-venv .venv-cpu
+```
+
+# 依赖包
+
+## 安装依赖
+
+安装一个（举例）
 ```shell
 uv add fastapi
 ```
@@ -88,13 +99,13 @@ uv add 包名 --venv 虚拟环境名
 uv add torch==2.6.0 torchvision==0.21.0 torchaudio==2.6.0 --index-url https://download.pytorch.org/whl/cpu --venv .venv-cpu
 ```
 
-## 卸载包
+## 删除依赖
 
 ```shell
 uv remove uvicorn
 ```
 
-## 查看依赖
+## 查看依赖列表
 
 依赖树, 会展示依赖链路
 
@@ -108,8 +119,6 @@ uv tree
 uv pip list
 ```
 
-
-
 ## 启动项目服务
 
 ```shell
@@ -118,15 +127,32 @@ uv run uvicorn main:app --reload
 
 ## 复原项目环境（克隆项目后用）
 
-1. uv 项目依靠两份文件管理环境
+uv 项目依靠两份文件管理环境
 
 - `pyproject.toml`：写明你需要哪些依赖包
-- `uv.lock`（锁文件）：**锁定所有包精确版本、子依赖版本**，连依赖的依赖版本全部固定死
+- `uv.lock`（锁文件）：**锁定所有包精确版本、子依赖版本**，连依赖的依赖版本全部固定
+
+使用指令固定信息
+
+```shell
+uv lock
+```
 
 当使用Git同步好远程的uv项目时，拉取下来这两个文件之后，可以直接用该指令进行复原环境
 
 ```shell
 uv sync
+```
+
+```shell
+# 生成lock（会同时解析两套extra）
+uv lock
+
+# 安装GPU环境（默认 .venv）
+uv sync --extra gpu
+
+# 安装CPU环境（默认 .venv）
+uv sync --extra cpu
 ```
 
 ### requirements.txt
@@ -191,6 +217,16 @@ uv sync
 # 运行代码
 ```shell
 uv run python main.py
+```
+
+运行在不同环境
+
+```shell
+# 跑在GPU环境
+uv run --venv .venv-gpu python main.py
+
+# 跑在CPU环境
+uv run --venv .venv-cpu python main.py
 ```
 
 如果是激活了虚拟环境，直接用Python命令可以运行
