@@ -63,49 +63,13 @@ uv self uninstall
 uv --version
 ```
 
-# Python版本控制
-## 安装想要的版本
-```shell
-# 安装该大版本最新小版本（例如自动下载3.12.6）
-uv python install 3.12
-```
-```shell
-# 安装精准固定版本
-uv python install 3.12.4
-
-# 一次性批量安装多个常用版本
-uv python install 3.10 3.11 3.12 3.13
-```
-## 查看 Python 存放路径
-```shell
-uv python dir
-```
-
-## 查看本机全部识别到的 Python(uv,conda等下载的都会识别到)
-```shell
-uv python list
-```
-只查看 uv 已经下载安装完毕的版本
-```shell
-uv python list --only-installed
-```
-
 
 # 虚拟环境
 ## 创建虚拟环境
 ```shell
-uv venv .venv
+uv venv .venv-cpu --python 3.12
 ```
 
-## 查看依赖
-依赖树, 会展示依赖链路
-```shell
-uv tree
-```
-扁平的展示所有的依赖包
-```shell
-uv pip list
-```
 ## 安装依赖（fastapi、接口测试工具为例）
 安装一个
 ```shell
@@ -116,17 +80,43 @@ uv add fastapi
 uv add fastapi uvicorn httpx
 ```
 
+安装到指定的虚拟环境
+
+uv add 包名 --venv 虚拟环境名
+
+```shell
+uv add torch==2.6.0 torchvision==0.21.0 torchaudio==2.6.0 --index-url https://download.pytorch.org/whl/cpu --venv .venv-cpu
+```
+
 ## 卸载包
+
 ```shell
 uv remove uvicorn
 ```
 
+## 查看依赖
+
+依赖树, 会展示依赖链路
+
+```shell
+uv tree
+```
+
+扁平的展示所有的依赖包
+
+```shell
+uv pip list
+```
+
+
+
 ## 启动项目服务
+
 ```shell
 uv run uvicorn main:app --reload
 ```
 
-## 一键复原完整项目环境（克隆项目后用）
+## 复原项目环境（克隆项目后用）
 
 1. uv 项目依靠两份文件管理环境
 
@@ -139,7 +129,7 @@ uv run uvicorn main:app --reload
 uv sync
 ```
 
-## requirements.txt相关
+### requirements.txt
 
 导出依赖清单到 requirements.txt
 
@@ -162,7 +152,26 @@ uv add -r requirements.txt
 pip list
 ```
 
+## 查看 Python 存放路径
+
+```shell
+uv python dir
+```
+
+## 查看本机全部识别到的 Python(uv,conda等下载的都会识别到)
+
+```shell
+uv python list
+```
+
+只查看 uv 已经下载安装完毕的版本
+
+```shell
+uv python list --only-installed
+```
+
 # uv创建项目
+
 ## 在当前文件夹初始化python项目
 ```shell
 # 1.新建文件夹，进入项目目录
