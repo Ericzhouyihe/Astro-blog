@@ -67,15 +67,7 @@ uv --version
 # 虚拟环境
 ## 创建虚拟环境
 ```shell
-uv venv .venv-cpu --python 3.12
-```
-
-需要删除虚拟环境直接删除对应文件夹就行
-
-需要改名也是先删除，然后sync一个新的
-
-```shell
-uv sync --project-venv .venv-cpu
+uv venv . --python 3.12
 ```
 
 # 依赖包
