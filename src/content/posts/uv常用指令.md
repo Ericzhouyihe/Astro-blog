@@ -67,7 +67,7 @@ uv --version
 # 虚拟环境
 ## 创建虚拟环境
 ```shell
-uv venv . --python 3.12
+uv venv .venv --python 3.12
 ```
 
 # 依赖包
@@ -81,14 +81,6 @@ uv add fastapi
 安装多个
 ```shell
 uv add fastapi uvicorn httpx
-```
-
-安装到指定的虚拟环境
-
-uv add 包名 --venv 虚拟环境名
-
-```shell
-uv add torch==2.6.0 torchvision==0.21.0 torchaudio==2.6.0 --index-url https://download.pytorch.org/whl/cpu --venv .venv-cpu
 ```
 
 ## 删除依赖
@@ -209,16 +201,6 @@ uv sync
 # 运行代码
 ```shell
 uv run python main.py
-```
-
-运行在不同环境
-
-```shell
-# 跑在GPU环境
-uv run --venv .venv-gpu python main.py
-
-# 跑在CPU环境
-uv run --venv .venv-cpu python main.py
 ```
 
 如果是激活了虚拟环境，直接用Python命令可以运行
