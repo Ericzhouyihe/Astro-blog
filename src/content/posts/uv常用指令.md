@@ -89,6 +89,12 @@ uv add fastapi uvicorn httpx
 uv remove uvicorn
 ```
 
+## 清除缓存
+
+```shell
+uv cache clean
+```
+
 ## 查看依赖列表
 
 依赖树, 会展示依赖链路
@@ -154,6 +160,7 @@ uv add -r requirements.txt
 ```
 
 ## 激活环境（Windows‑powershell）
+
 ```shell
 .venv\Scripts\Activate.ps1
 ```
@@ -178,6 +185,19 @@ uv python list
 
 ```shell
 uv python list --only-installed
+```
+
+## 启动python
+
+```shell
+uv run pytho
+```
+
+```python
+import torch
+print(torch.__version__)
+print(torch.version.cuda)
+print(torch.cuda.is_available())
 ```
 
 # uv创建项目
