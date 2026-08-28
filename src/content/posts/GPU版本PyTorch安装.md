@@ -80,7 +80,7 @@ pip install torch==2.6.0 torchvision==0.21.0 torchaudio==2.6.0 --index-url https
 uv安装指令：
 
 ```shell
-uv add torch==2.6.0 torchvision==0.21.0 torchaudio==2.6.0
+uv add torch==2.6.0 torchvision==0.21.0 torchaudio==2.6.0 --index https://download.pytorch.org/whl/cu126
 ```
 
 # 4. CUDA安装（可选）
