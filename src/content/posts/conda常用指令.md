@@ -23,6 +23,14 @@ conda env list
 conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/
 ```
 
+```shell
+conda config --remove-key channels
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free
+conda config --set show_channel_urls yes
+```
+
 # 移除指定的 channel
 
 ```shell
@@ -41,6 +49,13 @@ conda config --remove-key channels
 conda config --show channels
 ```
 
+```shell
+D:\app>conda config --show channels
+channels:
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/
+  - defaults
+```
+
 # 搜索指定的包
 
 ```shell
@@ -51,6 +66,10 @@ conda search <package_name>
 
 ```
 conda create -n <your_env_name> python=x.x
+```
+
+```shell
+conda create -n agent python=3.12
 ```
 
 - 解释：创建 Python 版本为 x.x，名字为 your_env_name 的虚拟环境

@@ -147,16 +147,34 @@ uv sync --extra cpu
 
 ### requirements.txt
 
-导出依赖清单到 requirements.txt
+导出依赖清单到 requirements.txt:
+
+1. 导出【生产依赖，不带 dev 包，不带 hash，干净 requirements.txt】（最常用）
 
 ```shell
-uv export --format requirements-txt > requirements.txt
+uv export --no-dev --format requirements-txt -o requirements.txt
+```
+
+2. 导出锁文件（用于精确复现你本机环境，带哈希）
+
+```shell
+uv export --format requirements-txt -o requirements-lock.txt
+```
+
+3. uv pip导出
+
+```shell
+uv pip freeze > requirements.txt
 ```
 
 从 requirements.txt 批量安装依赖
 
 ```shell
 uv add -r requirements.txt
+```
+
+```shell
+uv pip install -r requirements.txt
 ```
 
 ## 激活环境（Windows‑powershell）

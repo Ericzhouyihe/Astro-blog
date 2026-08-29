@@ -77,10 +77,41 @@ pip install torch==2.6.0 torchvision==0.21.0 torchaudio==2.6.0 --index-url https
 pip install torch==2.6.0 torchvision==0.21.0 torchaudio==2.6.0 --index-url https://download.pytorch.org/whl/cpu
 ```
 
-uv安装指令：
+uv安装指令（**使用uv指定下载地址，用的是--index，不用pip的那个，不指定则通过uv默认地址下载**）：
 
 ```shell
 uv add torch==2.6.0 torchvision==0.21.0 torchaudio==2.6.0 --index https://download.pytorch.org/whl/cu126
+```
+
+```shell
+uv pip install torch==2.6.0 torchvision==0.21.0 torchaudio==2.6.0 --index https://download.pytorch.org/whl/cu126
+```
+
+cu126在50系显卡上跑模型大概率报错：`no kernel image is available`
+
+官方各版本2.8.0安装指令如下:
+
+```shell
+# ROCM 6.4 (Linux only)
+pip install torch==2.8.0 torchvision==0.23.0 torchaudio==2.8.0 --index-url https://download.pytorch.org/whl/rocm6.4
+# CUDA 12.6
+pip install torch==2.8.0 torchvision==0.23.0 torchaudio==2.8.0 --index-url https://download.pytorch.org/whl/cu126
+# CUDA 12.8
+pip install torch==2.8.0 torchvision==0.23.0 torchaudio==2.8.0 --index-url https://download.pytorch.org/whl/cu128
+# CUDA 12.9
+pip install torch==2.8.0 torchvision==0.23.0 torchaudio==2.8.0 --index-url https://download.pytorch.org/whl/cu129
+# CPU only
+pip install torch==2.8.0 torchvision==0.23.0 torchaudio==2.8.0 --index-url https://download.pytorch.org/whl/cpu
+```
+
+用cu128的指令，会向下兼容30系，40系的显卡，uv指令（可以不要后面index）：
+
+```shell
+uv add torch==2.8.0 torchvision==0.23.0 torchaudio==2.8.0 --index https://download.pytorch.org/whl/cu128
+```
+
+```shell
+uv pip install torch==2.8.0 torchvision==0.23.0 torchaudio==2.8.0 --index https://download.pytorch.org/whl/cu128
 ```
 
 # 4. CUDA安装（可选）
