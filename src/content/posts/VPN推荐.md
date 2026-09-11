@@ -1,0 +1,101 @@
+---
+title: 梯子合集归档
+published: 2026-09-11
+category: 工具与环境配置
+---
+
+GitHub链接vpn集合
+
+[https://github.com/vpnnav/jichangtuijian](https://github.com/vpnnav/jichangtuijian)
+
+
+
+
+
+买了用量的网站
+
+牛逼
+
+[https://666.66jc.top/#/dashboard](https://666.66jc.top/#/dashboard)
+
+
+
+有买量的网站
+
+[https://666.subef.top/#/dashboard/invite](https://666.subef.top/#/dashboard/invite)
+
+
+
+https://www.xn--19zu2m.site/
+
+
+
+## 赔钱机场
+
+需要梯子才能进，有按量的套餐
+
+测网速：
+
+[https://xn--mes358aby2apfg.com/networkerr](https://xn--mes358aby2apfg.com/networkerr)
+
+![image-20260911085353531](assets/VPN推荐/image-20260911085353531.png)
+
+![image-20260911085418686](assets/VPN推荐/image-20260911085418686.png)
+
+## Phantom
+
+有专用的app，不需要自己手动配置链接，登录账号即可，连接延迟也低，1元的也很快
+![](assets/VPN推荐/1766323559123-c08ae6c7-f25a-4c22-9b4e-bb55d205403b.png)
+
+[https://pin.dianping.men/](https://pin.dianping.men/)
+
+
+
+## 悟空云
+[https://wksuyun.com](https://wksuyun.com)
+![](assets/VPN推荐/1778140735203-3b6dc378-8e84-4648-a854-6968e698c6d2.png)
+![](assets/VPN推荐/1778140769020-97498475-a9dc-4ace-9069-df261ac406e6.png)
+
+## 一元机场
+[一元.org](https://一元.org)
+
+[yiyuan1.com](https://yiyuan1.com)
+
+[一元.com](https://一元.com)
+![](assets/VPN推荐/1729342769868-c6b416c4-337d-4d15-910c-9b514f82c4ed.png)
+
+## NanoCloud
+[NanoCloud](https://edu.360buyimg.men/)
+
+Plantom的代理商
+![](assets/VPN推荐/1729344061013-707b3d12-bbb9-4aa6-ae1d-da62c397d8f3.png)
+
+## 万达云
+[https://app.wdycenter.com/console/plan](https://app.wdycenter.com/console/plan)
+
+![](assets/VPN推荐/1766318842405-0fd73fab-1801-4ee1-90ae-d9ad0566d110.png)
+
+## Mutdot
+[mutdot](https://user.mutdot.com)
+![](assets/VPN推荐/1729343896153-4fc4f54c-32aa-40f4-89cb-b10855e0090c.png)
+![](assets/VPN推荐/1729343902107-6b25cdb5-d923-4295-9f57-66cf10d9b2cb.png)
+
+## CyberGuard
+同样不需要挂梯子就可以直接访问
+
+[www.cyberguard.best](https://www.cyberguard.best)
+![](assets/VPN推荐/1729343176275-0cc7685f-c104-4892-82d2-effdd89f9834.png)
+![](assets/VPN推荐/1729343281185-c7d39842-4b74-4097-a214-0f49be1d49e5.png)
+
+## 红叶
+小贵
+https://www.xn--19zu2m.site/
+
+
+
+## 耶耶云
+[https://web.yeyeyun.cc](https://web.yeyeyun.cc/#/dashboard)
+
+不需要挂梯子，有按量的收费
+![](assets/VPN推荐/1789070726408-1e062a85-1e61-47e7-85a4-f069a18d0d0c.png)
+
