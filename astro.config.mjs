@@ -21,13 +21,16 @@ import { AdmonitionComponent } from "./src/plugins/rehype-component-admonition.m
 import { GithubCardComponent } from "./src/plugins/rehype-component-github-card.mjs";
 import { parseDirectiveNode } from "./src/plugins/remark-directive-rehype.js";
 import { remarkExcerpt } from "./src/plugins/remark-excerpt.js";
+import { remarkPostLinks } from "./src/plugins/remark-post-links.mjs";
 import { remarkReadingTime } from "./src/plugins/remark-reading-time.mjs";
 import { pluginCustomCopyButton } from "./src/plugins/expressive-code/custom-copy-button.js";
+
+const base = "/Astro-blog";
 
 // https://astro.build/config
 export default defineConfig({
 	site: "https://Ericzhouyihe.github.io",
-	base: "/Astro-blog",
+	base,
 	trailingSlash: "always",
 	integrations: [
 		tailwind({
@@ -100,6 +103,7 @@ export default defineConfig({
 	markdown: {
 		remarkPlugins: [
 			remarkMath,
+			[remarkPostLinks, { base }],
 			remarkReadingTime,
 			remarkExcerpt,
 			remarkGithubAdmonitionsToDirectives,
