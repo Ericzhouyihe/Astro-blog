@@ -1,12 +1,6 @@
 import { defineCollection, z } from "astro:content";
-import { glob } from "astro/loaders"; // 新增导入glob加载器
 
 const postsCollection = defineCollection({
-	// ========== 新增loader，在这里修改glob匹配规则 ==========
-	loader: glob({
-		base: "./src/content/posts",
-		pattern: "*.md"
-	}),
 	schema: z.object({
 		title: z.string(),
 		published: z.date(),
@@ -26,10 +20,6 @@ const postsCollection = defineCollection({
 });
 
 const specCollection = defineCollection({
-	loader: glob({
-		base: "./src/content/spec",
-		pattern: "**/*.md"
-	}),
 	schema: z.object({}),
 });
 

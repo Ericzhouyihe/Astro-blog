@@ -1,5 +1,6 @@
 .claude
 .obsidian
+src/content/posts/template/*
 
 dist
 .astro
