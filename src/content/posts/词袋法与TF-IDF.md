@@ -2,9 +2,11 @@
 title: 词袋法与 TF-IDF
 published: 2026-06-16
 category: 编程技术
-tags: [机器学习,特征工程,NLP,TF-IDF]
+tags:
+  - 机器学习
+  - 特征工程
+  - NLP
 ---
-
 # 词袋法与 TF-IDF
 
 在机器学习里，模型一般不能直接处理文本。
