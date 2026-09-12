@@ -1,9 +1,14 @@
 ---
-title: "ReAct 详解：让 Agent 学会思考"
+title: ReAct 详解：让 Agent 学会思考
 published: 2026-08-09
 category: 编程技术
-tags: [ReAct, Agent, ReWOO, LLM Compiler, Reflexion, 推理模式]
-description: "讲解 ReAct 推理范式——Thought/Action/Observation 闭环，以及 ReWOO、LLM Compiler、Reflexion 等进阶模式，对比串行与并行执行、外部观察与自我反思的差异。"
+tags:
+  - ReAct
+  - Agent
+  - ReWOO
+  - Reflexion
+  - 推理模式
+description: 讲解 ReAct 推理范式——Thought/Action/Observation 闭环，以及 ReWOO、LLM Compiler、Reflexion 等进阶模式，对比串行与并行执行、外部观察与自我反思的差异。
 ---
 
 > 🔗 从上一章延续的问题

@@ -5,7 +5,6 @@ category: 编程技术
 tags: [PyTorch, 深度学习, Tensor]
 description: "梳理 PyTorch 的核心基本命令，涵盖 Tensor 创建与转换、常见数值运算 API、Parameter 与模块定义，以及 Softmax / Sigmoid 交叉熵损失函数的使用要点。"
 ---
-
 ## 概述
 
 PyTorch 同时具备两类能力：
