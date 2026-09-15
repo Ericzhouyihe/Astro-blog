@@ -1,10 +1,9 @@
-﻿---
+---
 title: "Bagging 集成学习"
 published: 2026-06-23
 category: 编程技术
 tags: [集成学习, Bagging, 决策树, scikit-learn, 机器学习, 随机采样]
 ---
-
 # Bagging集成学习：用"群众投票"提升模型预测能力
 
 ## 概念介绍

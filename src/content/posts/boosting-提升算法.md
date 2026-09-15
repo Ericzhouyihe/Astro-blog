@@ -1,10 +1,9 @@
-﻿---
+---
 title: "Boosting 提升算法"
 published: 2026-06-23 
 category: 编程技术
 tags: [Boosting, 集成学习, AdaBoost, GBDT, XGBoost]
 ---
-
 # Boosting 提升算法
 
 串行纠错，化弱为强，如何把多个"弱鸡"模型组合成一个"王者"模型？

@@ -1,10 +1,9 @@
-﻿---
+---
 title: "Conda 常用指令"
 published: 2026-07-22
 description: 'conda常用指令'
 category: 工具与环境配置
 ---
-
 # 列出当前环境中已安装的包
 
 ```shell

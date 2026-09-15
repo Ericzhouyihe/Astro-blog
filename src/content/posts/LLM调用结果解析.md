@@ -5,8 +5,8 @@ tags:
   - LangChain
   - LLM
   - 结构化输出
-  - OutputParser
-  - JSONSchema
+  - Output-Parser
+  - JSON-Schema
   - Pydantic
 category: 编程技术
 description: 介绍 LLM 结构化输出的两种实现方式，对比 Prompt 约束与厂商 Structured Outputs，并梳理 Pydantic、JSON Schema 和 Output Parser 在结果解析流程中的职责。
