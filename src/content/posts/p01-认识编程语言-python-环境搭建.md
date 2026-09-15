@@ -1,4 +1,4 @@
-﻿---
+---
 title: "p01：认识编程语言与 Python 环境搭建"
 published: 2026-06-14
 category: 编程技术

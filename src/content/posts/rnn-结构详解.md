@@ -1,4 +1,4 @@
-﻿---
+---
 title: "RNN 结构详解"
 published: 2026-09-12
 tags:

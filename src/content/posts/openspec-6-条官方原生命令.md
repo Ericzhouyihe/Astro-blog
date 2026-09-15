@@ -1,4 +1,4 @@
-﻿---
+---
 title: "OpenSpec 6 条官方原生命令"
 published: 2026-09-12
 category: 工具与环境配置
