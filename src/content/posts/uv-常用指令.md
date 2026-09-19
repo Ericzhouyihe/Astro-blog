@@ -1,25 +1,23 @@
-﻿---
+---
 title: "uv 常用指令"
 published: 2026-08-11
 description: 'uv常用指令'
 category: 工具与环境配置
 ---
 # 全局安装
-Windows环境下, 打开PowerShell并用管理员身份运行, 使用指令安装uv, 即可全局使用, 所有的conda环境都能用uv
+Windows环境下, 打开PowerShell
 ```shell
-# 临时允许执行脚本（仅当前窗口）
-Set-ExecutionPolicy Bypass -Scope Process -Force
-```
-需要安装到c盘外需要指定路径, 安装完要修改默认路径, 不然后续安装东西还是在c盘
-```shell
-# 安装到 D:\app\uv，缓存放到 D:\data\uv-cache
 mkdir D:\APP\uv\bin
+mkdir D:\APP\uv\python
+mkdir D:\APP\uv\tools
 mkdir D:\APP\uv\cache
-powershell -ExecutionPolicy ByPass -c {
-  $env:UV_INSTALL_DIR = "D:\APP\uv\bin";
-  $env:UV_CACHE_DIR = "D:\APP\uv\bin\cache";
-  irm https://astral.sh/uv/install.ps1 | iex
-}
+
+setx UV_PYTHON_INSTALL_DIR "D:\APP\uv\python"
+setx UV_TOOL_DIR "D:\APP\uv\tools"
+setx UV_CACHE_DIR "D:\APP\uv\cache"
+setx UV_INSTALL_DIR "D:\APP\uv\bin"
+
+irm https://astral.sh/uv/install.ps1 | iex
 ```
 
 # 设置各种路径
@@ -226,13 +224,16 @@ print(torch.cuda.is_available())
 mkdir my_demo
 cd my_demo
 
-# 2.初始化项目，生成pyproject.toml
+# 2.创建解释器环境
+uv venv --python 3.12
+
+# 3.初始化项目，生成pyproject.toml
 uv init
 
-# 3.安装第三方包，自动更新uv.lock锁文件
+# 4.安装包，自动更新pyproject.toml和uv.lock
 uv add requests
 
-# 4.一键搭建完整虚拟环境
+# 5.通过pyproject.toml和uv.lock同步出整套环境
 uv sync
 ```
 
