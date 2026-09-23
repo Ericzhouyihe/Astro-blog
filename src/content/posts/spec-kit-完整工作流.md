@@ -1,4 +1,4 @@
-﻿---
+---
 title: Spec Kit 完整工作流：从需求规格到代码实现
 published: 2026-09-22
 category: 工具与环境配置
