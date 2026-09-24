@@ -1,9 +1,14 @@
 ---
-title: "LangChain 核心概念：Runnable、LCEL、Chain 与 LangGraph"
+title: LangChain 核心概念：Runnable、LCEL、Chain 与 LangGraph
 published: 2026-09-15
-tags: [LangChain, Runnable, LCEL, Chain, LangGraph, Agent]
+tags:
+  - LangChain
+  - Runnable
+  - LCEL
+  - LangGraph
+  - Agent
 category: 编程技术
-description: "梳理 LangChain 中 Runnable、LCEL 与 Chain 的关系，介绍串行、并行、分支和兜底等组合方式，并说明固定流程何时应升级为 LangGraph 工作流。"
+description: 梳理 LangChain 中 Runnable、LCEL 与 Chain 的关系，介绍串行、并行、分支和兜底等组合方式，并说明固定流程何时应升级为 LangGraph 工作流。
 ---
 LangChain 包含 Prompt、模型、Output Parser、Retriever、Tool 等多种组件。它们职责不同，但都需要解决同一个问题：**如何用统一方式调用并自由组合**。
 
