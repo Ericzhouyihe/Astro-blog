@@ -3,7 +3,7 @@ title: "LangGraph 入门：核心概念、主要能力与 LangChain 的区别"
 published: 2026-09-24
 tags: [LangGraph, LangChain, Agent, 工作流, 状态管理]
 category: 编程技术
-description: "通过智能客服示例理解 LangGraph 的节点、边和状态，认识持久化、人机协作、循环与流式处理，并厘清它与 LangChain 的分工。"
+description: "通过智能客服示例理解 LangGraph 的节点、边、状态与状态流转，并认识持久化、人机协作、循环及其与 LangChain 的分工。"
 ---
 # LangGraph 入门：核心概念、主要能力与 LangChain 的区别
 
@@ -36,6 +36,8 @@ description: "通过智能客服示例理解 LangGraph 的节点、边和状态�
 
 图通常从 `START` 开始，到 `END` 结束。条件边也可以指向前面的节点，形成循环；但**循环必须有退出条件**，避免一直运行。
 
+多个节点也能从 `START` 同时出发。若后续节点必须等它们全部完成，可以用 `builder.add_edge(["节点A", "节点B"], "汇总节点")` 表示汇合；这比为每条分支分别连一条边更清楚地表达“等待两者”。
+
 ### 状态：在节点之间传递数据
 
 状态是工作流共享的数据结构，比如用户问题、识别出的意图和最终回答。节点读取状态，并返回自己要更新的字段；后续节点再读取更新后的状态。
@@ -48,35 +50,55 @@ description: "通过智能客服示例理解 LangGraph 的节点、边和状态�
 
 **注意：状态不是“自动保存到数据库”。**如果希望进程结束后还能恢复，需要另外配置持久化机制。
 
-### 一个最小示例
+### 一个多 State 示例
 
-下面不用 LLM，先用关键词模拟意图识别，重点看节点、条件边和状态如何配合：
+下面不用 LLM，先用关键词模拟意图识别。示例分别定义图的主要状态、输入状态、节点读取的中间状态和输出状态，方便观察每一步能看到什么：
 
 ```python
 from typing import TypedDict
 from langgraph.graph import START, END, StateGraph
 
 
-class State(TypedDict):
+class GraphState(TypedDict):
     question: str
-    intent: str
     answer: str
 
 
-def classify(state: State) -> dict:
+class InputState(TypedDict):
+    question: str
+
+
+class ClassifiedState(TypedDict):
+    question: str
+    intent: str
+
+
+class OutputState(TypedDict):
+    answer: str
+
+
+def classify(state: InputState) -> dict:
     intent = "reservation" if "预约" in state["question"] else "faq"
     return {"intent": intent}
 
 
-def answer_reservation(state: State) -> dict:
-    return {"answer": "请问您想预约哪一天？"}
+def route_by_intent(state: ClassifiedState) -> str:
+    return state["intent"]
 
 
-def answer_faq(state: State) -> dict:
-    return {"answer": "这里可以查询常见问题。"}
+def answer_reservation(state: ClassifiedState) -> dict:
+    return {"answer": f"收到您的请求：{state['question']}。请问您想预约哪一天？"}
 
 
-builder = StateGraph(State)
+def answer_faq(state: ClassifiedState) -> dict:
+    return {"answer": f"关于“{state['question']}”，这里可以查询常见问题。"}
+
+
+builder = StateGraph(
+    state_schema=GraphState,
+    input_schema=InputState,
+    output_schema=OutputState,
+)
 builder.add_node("classify", classify)
 builder.add_node("reservation", answer_reservation)
 builder.add_node("faq", answer_faq)
@@ -84,20 +106,52 @@ builder.add_node("faq", answer_faq)
 builder.add_edge(START, "classify")
 builder.add_conditional_edges(
     "classify",
-    lambda state: state["intent"],
+    route_by_intent,
     {"reservation": "reservation", "faq": "faq"},
 )
 builder.add_edge("reservation", END)
 builder.add_edge("faq", END)
 
 graph = builder.compile()
-result = graph.invoke({"question": "我想预约座位", "intent": "", "answer": ""})
-print(result["answer"])  # 请问您想预约哪一天？
+result = graph.invoke({"question": "我想预约座位"})
+print(result)  # {'answer': '收到您的请求：我想预约座位。请问您想预约哪一天？'}
 ```
 
-运行路径是 `START → classify → reservation → END`。真实项目中，可以把关键词判断替换为模型调用，把回答节点替换为 FAQ 检索或预约服务。FAQ 检索本身的设计可参考 [FAQ 相似问题匹配](./FAQ相似问题匹配.md)。
+运行路径是 `START → classify → reservation → END`。`classify` 只收到 `question`，返回 `intent`；路由函数读取 `intent`，回答节点读取 `question`；调用者最终只收到 `answer`。真实项目中，可以把关键词判断替换为模型调用，把回答节点替换为 FAQ 检索或预约服务。FAQ 检索本身的设计可参考 [FAQ 相似问题匹配](./FAQ相似问题匹配.md)。
 
-## 2. LangGraph 主要解决什么问题
+## 2. 入门必懂：状态是怎样流转的？
+
+理解状态时，先分清三件事：**`invoke()` 给图的是输入；节点收到的是当前状态中它能读取的部分；节点返回的是要写入状态的更新。**节点不需要每次返回完整状态。以上面的客服图为例，`classify` 返回 `{"intent": "reservation"}`，原有的 `question` 不会因此丢失；后续节点可以同时读取问题和意图。
+
+把一次执行想成这样：
+
+```text
+外部输入 → 按输入规则进入图 → 节点读取所需字段
+         → 节点返回部分更新 → 图合并到内部状态
+         → 按输出规则返回给调用者
+```
+
+### 四种 schema 分别管什么
+
+| 名称 | 简单理解 | 在客服例子中 |
+| --- | --- | --- |
+| 输入 schema（`input_schema`） | 哪些字段允许从 `invoke()` 进入图 | `InputState`：`question` |
+| 状态 schema（`state_schema`） | 图的主要状态有哪些字段 | `GraphState`：`question`、`answer` |
+| 节点输入 schema | 某个节点能从状态中读到哪些字段 | `ClassifiedState`：`question`、`intent` |
+| 输出 schema（`output_schema`） | `invoke()` 最后返回哪些字段 | `OutputState`：`answer` |
+
+这里有个容易忽略的点：`intent` 不在 `GraphState` 中，却在回答节点使用的 `ClassifiedState` 中声明，因此仍能作为图的**内部状态字段**，由 `classify` 写入，再供路由函数和回答节点读取。`invoke({"question": "我想预约座位"})` 只需提供问题，结果只包含 `answer`。**输出少，不代表内部状态也少。**
+
+还有两点容易混淆：
+
+- **返回一个新键，不等于声明一个新状态字段。**例如节点返回 `{"answer": "...", "debug": "..."}`，其中 `answer` 已声明，可以写入；未在图使用的 schema 中声明的 `debug` 不会自动变成内部状态。外部输入中的额外字段也不会因为传给 `invoke()` 就自动进入图。
+- **节点能读什么，与它能更新什么不是一回事。**本例的 `classify` 只接收 `InputState`，仍可返回在 `ClassifiedState` 中声明的 `intent`；回答节点接收 `ClassifiedState`，仍可返回在 `GraphState` 中声明的 `answer`。
+
+如果两个并行节点同时更新**同一个字段**，还需要定义 reducer（合并规则）；分别更新不同字段时通常不需要。`TypedDict` 用于描述字段结构，本身并不是严格的运行时校验器。
+
+> **记忆口诀：输入管入口，状态管保存，节点输入管读取，输出管展示；节点返回值只是一次更新。**更完整的双搜索示例见 [[未命名.md|StateGraph 状态流转详解]]。
+
+## 3. LangGraph 主要解决什么问题
 
 | 能力 | 解决的问题 | 典型场景 |
 | --- | --- | --- |
@@ -126,7 +180,7 @@ print(result["answer"])  # 请问您想预约哪一天？
 
 暂停和恢复需要应用正确保存、重新加载执行状态，不能只在图中画出“人工审核”节点。运行时也可以向前端逐步推送节点更新、消息或模型生成内容，让用户看到进度，而不必等整个流程结束。有关模型流式调用，可参考 [LangChain 三种 LLM 调用方式](./langchain-三种-llm-调用方式.md)。
 
-## 3. LangGraph 和 LangChain 的关系
+## 4. LangGraph 和 LangChain 的关系
 
 **两者不是非此即彼。**LangChain 侧重提供模型、Prompt、Tool、Retriever 等组件及其组合方式；LangGraph 侧重定义有状态工作流的执行顺序与控制逻辑。一个 LangGraph 节点可以直接调用 LangChain 组件，也可以调用普通 Python 函数或其他服务。
 
