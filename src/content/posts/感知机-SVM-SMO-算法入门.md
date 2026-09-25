@@ -2,7 +2,7 @@
 title: "感知机、SVM 与 SMO 算法入门"
 published: 2026-07-04
 tags: [机器学习,SVM,算法推导,集成学习]
-category: 编程技术
+category: 机器学习与深度学习
 ---
 
 ## 一、核心结论速览

@@ -1,8 +1,8 @@
 ﻿---
 title: "GBDT 梯度提升树"
 published: 2026-06-24
-category: 编程技术
-tags: [GBDT, 梯度提升, 集成学习, 回归树, 残差]
+category: 机器学习与深度学习
+tags: [机器学习, GBDT, 梯度提升, 集成学习, 回归树, 残差]
 ---
 
 # GBDT梯度提升树

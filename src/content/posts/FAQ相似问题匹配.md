@@ -9,7 +9,7 @@ tags:
   - 文本匹配
   - 向量检索
   - BM25
-category: 编程技术
+category: Python 与 AI 应用开发
 description: 系统梳理智能客服 FAQ 相似问题匹配的工程方案：从问题库设计、分词预处理、字面/关键词/语义多路检索，到 RRF 融合排序、Cross-Encoder 精排与效果评估，附完整 Python 代码示例与常见踩坑总结。
 ---
 # 智能客服 FAQ 相似问题匹配

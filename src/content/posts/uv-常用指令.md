@@ -2,7 +2,7 @@
 title: "uv 常用指令"
 published: 2026-08-11
 description: 'uv常用指令'
-category: 工具与环境配置
+category: 工具、环境与工作流
 ---
 # 全局安装
 Windows环境下, 打开PowerShell

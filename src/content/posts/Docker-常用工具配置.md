@@ -2,7 +2,7 @@
 title: "Docker 常用工具配置"
 published: 2026-08-11
 description: 'Docker常用工具配置'
-category: 工具与环境配置
+category: 工具、环境与工作流
 ---
 # MySQL
 

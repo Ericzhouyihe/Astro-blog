@@ -1,8 +1,8 @@
 ---
 title: "AdaBoost 算法"
 published: 2026-06-23
-category: 编程技术
-tags: [AdaBoost, 集成学习, Boosting, 决策树, 分类算法]
+category: 机器学习与深度学习
+tags: [机器学习, AdaBoost, 集成学习, Boosting, 决策树, 分类算法]
 ---
 # AdaBoost算法
 

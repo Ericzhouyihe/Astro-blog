@@ -2,7 +2,7 @@
 title: "Linux 常用指令"
 published: 2026-08-25
 description: 'Linux常用指令'
-category: 工具与环境配置
+category: 工具、环境与工作流
 ---
 ## 1、基本命令
 

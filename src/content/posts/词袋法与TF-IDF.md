@@ -1,7 +1,7 @@
 ﻿---
 title: "词袋法与 TF-IDF"
 published: 2026-06-16
-category: 编程技术
+category: 机器学习与深度学习
 tags:
   - 机器学习
   - 特征工程

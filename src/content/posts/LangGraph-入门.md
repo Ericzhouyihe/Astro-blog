@@ -2,7 +2,7 @@
 title: "LangGraph 入门：核心概念、主要能力与 LangChain 的区别"
 published: 2026-09-24
 tags: [LangGraph, LangChain, Agent, 工作流, 状态管理]
-category: 编程技术
+category: Python 与 AI 应用开发
 description: "通过智能客服示例理解 LangGraph 的节点、边、状态与状态流转，并认识持久化、人机协作、循环及其与 LangChain 的分工。"
 ---
 # LangGraph 入门：核心概念、主要能力与 LangChain 的区别

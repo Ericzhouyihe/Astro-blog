@@ -7,7 +7,7 @@ tags:
   - ConnectionPool
   - Pipeline
   - 缓存
-category: 编程技术
+category: Python 与 AI 应用开发
 description: 介绍 Redis 的常用数据类型、Python 连接方式、连接池、JSON 存储、Pipeline 批处理及项目配置。
 ---
 ## 1. Redis简介

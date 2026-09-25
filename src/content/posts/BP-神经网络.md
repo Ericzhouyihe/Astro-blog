@@ -1,8 +1,8 @@
 ---
 title: "BP 神经网络"
 published: 2026-07-14
-tags: [机器学习, 神经网络, BP算法]
-category: 编程技术
+tags: [深度学习, 神经网络, BP算法]
+category: 机器学习与深度学习
 ---
 ## 一、网络结构与基础参数
 

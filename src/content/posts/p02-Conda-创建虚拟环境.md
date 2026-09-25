@@ -1,7 +1,7 @@
 ﻿---
 title: "p02：Conda 创建虚拟环境"
 published: 2026-07-02
-category: 编程技术
+category: Python 与 AI 应用开发
 tags: [Python基础]
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "p01：认识编程语言与 Python 环境搭建"
 published: 2026-06-14
-category: 编程技术
+category: Python 与 AI 应用开发
 tags: [Python基础,环境搭建]
 ---
 

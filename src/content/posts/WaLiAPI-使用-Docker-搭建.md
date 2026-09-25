@@ -2,7 +2,7 @@
 title: "WaLiAPI 使用 Docker 搭建"
 published: 2026-08-31
 description: 'waliapi配置指令记录'
-category: 工具与环境配置
+category: 工具、环境与工作流
 ---
 
 ## Docker Compose纯指令部署

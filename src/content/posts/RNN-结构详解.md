@@ -7,7 +7,7 @@ tags:
   - 深度学习
   - 双向RNN
   - NLP
-category: 编程技术
+category: 机器学习与深度学习
 description: 从时间步、隐藏状态和网络层数出发，对比基础 RNN、多层 RNN、双向 RNN 与堆叠双向 RNN 的结构、信息流向和适用特点。
 ---
 **RNN 各种结构**：

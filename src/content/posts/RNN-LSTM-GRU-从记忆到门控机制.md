@@ -1,7 +1,7 @@
 ---
 title: "RNN、LSTM 与 GRU：从记忆到门控机制"
 published: 2026-09-12
-category: 编程技术
+category: 机器学习与深度学习
 tags:
   - 深度学习
   - NLP

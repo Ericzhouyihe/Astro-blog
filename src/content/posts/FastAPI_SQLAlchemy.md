@@ -1,7 +1,7 @@
 ---
 title: "FastAPI & SQLAlchemy"
 published: 2026-08-13
-category: 编程技术
+category: Python 与 AI 应用开发
 tags: [FastAPI, SQLAlchemy, Uvicorn, Python, 协程, 异步, ORM]
 description: "从协程与事件循环、WSGI/ASGI 接口规范讲起，系统讲解 FastAPI 的路由、路径/查询参数与请求体，以及 SQLAlchemy 的 ORM 建模、增删改查与关联关系，最后给出 FastAPI + SQLAlchemy 组合实战与 sqlacodegen 自动生成模型工具。"
 ---

@@ -1,8 +1,8 @@
 ---
 title: "Boosting 提升算法"
 published: 2026-06-23 
-category: 编程技术
-tags: [Boosting, 集成学习, AdaBoost, GBDT, XGBoost]
+category: 机器学习与深度学习
+tags: [机器学习, Boosting, 集成学习, AdaBoost, GBDT, XGBoost]
 ---
 # Boosting 提升算法
 

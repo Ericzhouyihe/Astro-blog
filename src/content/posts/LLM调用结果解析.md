@@ -8,7 +8,7 @@ tags:
   - Output-Parser
   - JSON-Schema
   - Pydantic
-category: 编程技术
+category: Python 与 AI 应用开发
 description: 介绍 LLM 结构化输出的两种实现方式，对比 Prompt 约束与厂商 Structured Outputs，并梳理 Pydantic、JSON Schema 和 Output Parser 在结果解析流程中的职责。
 ---
 大模型默认返回的是**自然语言**，但在实际生产环境中，我们经常希望它返回程序可以直接处理的**结构化数据**，例如 JSON。

@@ -1,7 +1,7 @@
 ﻿---
 title: "GPU 版本 PyTorch 安装"
 published: 2026-08-28
-category: 工具与环境配置
+category: 工具、环境与工作流
 ---
 绝大多数情况下我们会安装GPU版本的PyTorch。目前PyTorch不仅支持NVIDIA的GPU，还支持AMD的ROCm的GPU。
 

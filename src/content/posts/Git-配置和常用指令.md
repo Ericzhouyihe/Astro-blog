@@ -2,7 +2,7 @@
 title: "Git 配置和常用指令"
 published: 2026-07-22
 description: '本地git的配置和git相关的仓库的配置指令'
-category: 工具与环境配置
+category: 工具、环境与工作流
 ---
 
 # 全局名称、全局邮箱

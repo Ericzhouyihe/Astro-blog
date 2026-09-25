@@ -1,7 +1,7 @@
 ﻿---
 title: PCA 主成分分析——从直觉到数学步骤的降维
 published: 2026-06-15
-category: 编程技术
+category: 机器学习与深度学习
 tags: [机器学习, PCA, 降维, 特征工程, 无监督学习]
 ---
 

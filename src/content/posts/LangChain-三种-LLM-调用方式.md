@@ -8,7 +8,7 @@ tags:
   - 异步编程
   - 流式输出
   - 批量调用
-category: 编程技术
+category: Python 与 AI 应用开发
 description: 对比 LangChain 中 ainvoke、stream 与 batch 三种 LLM 调用方式，说明它们在异步并发、流式输出和批量处理场景中的作用、用法与区别。
 ---
 LangChain 中常见的 LLM 调用方式有三种：

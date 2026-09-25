@@ -1,8 +1,8 @@
 ﻿---
 title: "从 Seq2Seq、Attention 到 Transformer：NLP 架构演进"
 published: 2026-09-12
-category: 编程技术
-tags: [NLP, RNN, Seq2Seq, Attention, Transformer, LLM]
+category: 机器学习与深度学习
+tags: [深度学习, NLP, RNN, Seq2Seq, Attention, Transformer, LLM]
 description: "从序列建模的问题出发，梳理 RNN、LSTM、Seq2Seq、Attention 与 Transformer 的演进逻辑，并说明它们与 BERT、GPT、RAG 和 Agent 的关系。"
 ---
 # 从 Seq2Seq、Attention 到 Transformer：NLP 架构演进

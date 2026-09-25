@@ -1,7 +1,7 @@
 ---
 title: ReAct 详解：让 Agent 学会思考
 published: 2026-08-09
-category: 编程技术
+category: Python 与 AI 应用开发
 tags:
   - ReAct
   - Agent
