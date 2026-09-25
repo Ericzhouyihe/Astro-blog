@@ -113,7 +113,7 @@ def tokenize(text: str) -> list[str]:
 | 语义向量检索           | Sentence Transformers     | 不同说法相近意思    | 需要模型；分数非概率          |
 | Cross-Encoder 重排 | Sentence Transformers     | 精细相关性判断     | 逐对计算，只适合重排少量候选      |
 
-> 关于 TF-IDF 的原理可参考 [词袋法与 TF-IDF](./词袋法与-tf-idf.md)；向量数据库的选型思路可参考 [什么是向量数据库](./什么是向量数据库.md)；语义向量模型背后的 Transformer 架构可参考 [Seq2Seq、Attention 到 Transformer：NLP 架构演进](./seq2seq-attention-transformer-nlp-架构演进.md)。
+> 关于 TF-IDF 的原理可参考 [词袋法与 TF-IDF](./词袋法与TF-IDF.md)；向量数据库的选型思路可参考 [什么是向量数据库](./什么是向量数据库.md)；语义向量模型背后的 Transformer 架构可参考 [Seq2Seq、Attention 到 Transformer：NLP 架构演进](./Seq2Seq-Attention-Transformer-NLP-架构演进.md)。
 
 ### 1. 精确匹配 / 别名词典
 
@@ -196,7 +196,7 @@ def jaccard_similarity(text_a: str, text_b: str) -> float:
 
 ### 4. 字符 n-gram TF-IDF
 
-不分词，直接用字符级 2~4-gram 构建 TF-IDF 向量。关于 TF-IDF 的数学原理和 `TfidfVectorizer` 的参数细节，可参考 [词袋法与 TF-IDF](./词袋法与-tf-idf.md)。
+不分词，直接用字符级 2~4-gram 构建 TF-IDF 向量。关于 TF-IDF 的数学原理和 `TfidfVectorizer` 的参数细节，可参考 [词袋法与 TF-IDF](./词袋法与TF-IDF.md)。
 
 ```python
 from sklearn.feature_extraction.text import TfidfVectorizer

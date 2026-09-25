@@ -39,7 +39,7 @@ llm.invoke(...)
 parser.invoke(...)
 ```
 
-统一接口的真正价值不是减少几个方法名，而是让组件能够直接组合。关于批量、异步和流式调用，可参考 [LangChain 三种 LLM 调用方式](./langchain-三种-llm-调用方式.md)。
+统一接口的真正价值不是减少几个方法名，而是让组件能够直接组合。关于批量、异步和流式调用，可参考 [LangChain 三种 LLM 调用方式](./LangChain-三种-LLM-调用方式.md)。
 
 ## LCEL：组合 Runnable
 
@@ -180,3 +180,7 @@ LangGraph = 可分支、可循环、带状态的工作流
 ```text
 组件 → Runnable → LCEL → Chain → LangGraph → Agent 工作流
 ```
+
+## 相关阅读
+
+- [LangGraph 入门](./LangGraph-入门.md)

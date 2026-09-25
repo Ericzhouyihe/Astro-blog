@@ -364,7 +364,7 @@ redis = Redis(connection_pool=pool)
 
 ## 9. 项目中Redis定位
 
-如果把 Redis 放进 [FastAPI + SQLAlchemy](./fastapi-sqlalchemy.md) 这样的后端项目，可以让 SQLAlchemy 负责业务数据的持久化，Redis 负责热点数据缓存和临时状态。对于还需要语义检索的 AI 应用，则可以再引入向量数据库，形成下面的分工：
+如果把 Redis 放进 [FastAPI + SQLAlchemy](./FastAPI_SQLAlchemy.md) 这样的后端项目，可以让 SQLAlchemy 负责业务数据的持久化，Redis 负责热点数据缓存和临时状态。对于还需要语义检索的 AI 应用，则可以再引入向量数据库，形成下面的分工：
 
 ```
 MySQL
@@ -393,3 +393,7 @@ Redis主要负责：
 - 保存临时状态
 
 不是替代MySQL作为主数据库。
+
+## 相关阅读
+
+- [Docker 常用工具配置](./Docker-常用工具配置.md)

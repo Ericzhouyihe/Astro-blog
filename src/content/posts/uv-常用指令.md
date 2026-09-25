@@ -248,3 +248,7 @@ uv run python main.py
 python main.py
 ```
 
+## 相关阅读
+
+- [Conda 常用指令](./Conda-常用指令.md)
+- [Spec Kit 完整工作流](./Spec-Kit-完整工作流.md)

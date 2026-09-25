@@ -35,7 +35,7 @@ result["age"]
 result["city"]
 ```
 
-因此，[LangChain](./langchain-三种-llm-调用方式.md) 提供了 Output Parser 等能力，用于帮助我们处理模型输出。
+因此，[LangChain](./LangChain-三种-LLM-调用方式.md) 提供了 Output Parser 等能力，用于帮助我们处理模型输出。
 
 ## 获取 JSON 结果
 
@@ -292,3 +292,8 @@ Output Parser
 一句话：
 
 > **Prompt 约束是“告诉模型按格式输出”；厂商结构化输出是“通过 API 能力约束模型必须符合 Schema”。**
+
+## 相关阅读
+
+- [LangChain 核心概念](./LangChain-核心概念.md)
+- [LangGraph 入门](./LangGraph-入门.md)
