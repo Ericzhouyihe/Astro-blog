@@ -7,7 +7,7 @@ description: "理解 LangGraph 如何通过 Pregel 的超步调度节点、用 C
 ---
 # LangGraph Pregel 运行机制与历史状态
 
-如果还不熟悉节点、边和状态，可以先阅读 [LangGraph 入门](./LangGraph-入门.md)。本文接着回答两个问题：**图如何运行？运行过的状态如何查看？**
+如果还不熟悉节点、边和状态，可以先阅读 [LangGraph 入门](./LangGraph-入门.md)。本文接着回答两个问题：**图如何运行？运行过的状态如何查看**？
 
 ## 一、编译后：节点如何运行
 
@@ -16,11 +16,11 @@ description: "理解 LangGraph 如何通过 Pregel 的超步调度节点、用 C
 - **Actor（执行节点）**：对应 `PregelNode`，读取输入并运行节点逻辑。
 - **Channel（通信通道）**：保存数据、接收节点更新，并把变化传给订阅它的节点。状态字段的合并规则也在这里发挥作用。
 
-可以把它记成：**Actor 做事，Channel 传递和合并结果。**节点并非沿着边只运行一次；当它订阅的 Channel 再次更新时，就可能再次被调度。这也是 LangGraph 能支持循环和多轮状态传播的关键。
+可以把它记成：**Actor 做事，Channel 传递和合并结果**。 节点并非沿着边只运行一次；当它订阅的 Channel 再次更新时，就可能再次被调度。这也是 LangGraph 能支持循环和多轮状态传播的关键。
 
 ### SuperStep：一次调度循环
 
-Pregel 以 **SuperStep（超步）**推进，每轮包含三个阶段：
+Pregel 以 **SuperStep（超步）** 推进，每轮包含三个阶段：
 
 1. **Plan**：根据输入或上一轮更新的 Channel，选出本轮要运行的节点。
 2. **Execute**：执行这些节点；同一轮中可运行的节点可以并行执行。
@@ -87,7 +87,7 @@ history = list(graph.get_state_history(config))
 
 还可查看 `config`、`metadata`、`parent_config` 和 `interrupts`，分别了解检查点配置、元数据、父检查点及中断信息。
 
-**注意：检查点对应图执行中的状态边界，不是 Plan、Execute、Update 每个阶段各保存一次。**保存了当前数据和后续任务，LangGraph 才能支持恢复执行、人机介入和历史回溯等能力。
+**注意：检查点对应图执行中的状态边界，不是 Plan、Execute、Update 每个阶段各保存一次**。保存了当前数据和后续任务，LangGraph 才能支持恢复执行、人机介入和历史回溯等能力。
 
 ## 一句话记住
 

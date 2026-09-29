@@ -12,7 +12,7 @@ description: 介绍 Spec Kit 在已有项目中的安装与初始化方法，梳
 ---
 可以把 **Spec Kit** 理解成：
 
-> **先把需求写清楚 → 再设计怎么做 → 再拆任务 → 最后让 AI 按任务写代码 → 检查是否真正完成。**
+> **先把需求写清楚 → 再设计怎么做 → 再拆任务 → 最后让 AI 按任务写代码 → 检查是否真正完成**。
 
 无论是新项目还是已有项目，都可以按照下面这套流程使用 Spec Kit。
 
@@ -66,7 +66,7 @@ specify init --here --force --integration claude
 
 作用是给当前项目加入 Spec Kit 的 `.specify/`、模板、脚本以及对应 AI Agent 的命令文件。`--here` 表示当前目录，`--force` 表示允许初始化到已有文件的项目里。
 
-**`specify init` 一个项目通常只执行一次。** 后面开发功能，不需要每次重新 init。
+**`specify init` 一个项目通常只执行一次**。 后面开发功能，不需要每次重新 init。
 ## 3. 正式开发流程
 
 初始化完成以后，下面这些就**不是 PowerShell 命令了**。
@@ -126,7 +126,7 @@ converge
 按你的 Agent 初始化后实际显示的命令为准；官方文档也说明命令调用形式会跟 integration 有关。
 ### ① `/speckit.constitution`
 
-**一个项目通常执行一次。**
+**一个项目通常执行一次**。
 
 作用：定义整个项目以后都必须遵守的规则。
 
@@ -395,7 +395,7 @@ tasks 却完全没有分页任务
 
 到了这里才真正开始：
 
-> **写代码。**
+> **写代码**。
 
 直接执行：
 
@@ -457,7 +457,7 @@ AI：好的，开始乱写
 
 作用：
 
-> **检查代码是否真的已经满足 spec，而不是“代码写完就算完”。**
+> **检查代码是否真的已经满足 spec，而不是“代码写完就算完”**。
 
 执行：
 
@@ -565,6 +565,6 @@ specify init --here --force --integration codex
 
 一句话记忆就是：
 
-> **Constitution 定规矩 → Specify 定需求 → Clarify 问清楚 → Plan 定方案 → Checklist 查需求 → Tasks 拆任务 → Analyze 查矛盾 → Implement 写代码 → Converge 验收。** 
+> **Constitution 定规矩 → Specify 定需求 → Clarify 问清楚 → Plan 定方案 → Checklist 查需求 → Tasks 拆任务 → Analyze 查矛盾 → Implement 写代码 → Converge 验收**。
 >
 

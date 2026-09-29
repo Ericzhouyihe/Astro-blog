@@ -44,7 +44,7 @@ description: 讲解 ReAct 推理范式——Thought/Action/Observation 闭环，
 2022 年，Yao 等人在论文 *"ReAct: Synergizing Reasoning and Acting in Language Models"* 中提出了 ReAct 范式，将两者结合：
 
 > 💡 ReAct 的核心洞察
-> **推理指导行动，行动反馈推理。**LLM 先"想"该做什么（Thought），再"做"（Action），然后"看"结果（Observation），基于结果再"想"下一步——形成闭环。
+> **推理指导行动，行动反馈推理**。LLM 先"想"该做什么（Thought），再"做"（Action），然后"看"结果（Observation），基于结果再"想"下一步——形成闭环。
 
 ## ReAct 循环：Thought → Action → Observation
 
@@ -125,9 +125,9 @@ Action: finish(最终答案)
 
 ## ReWOO 模式（Reasoning Without Observation）
 
-ReAct 的核心循环是"边想边做"——每一步 Thought 之后立刻 Action，获得 Observation 后再想下一步。这很直观，但有一个严重的问题：**每一步的 Observation 都会被塞入上下文，随着步数增加，token 消耗线性膨胀。**
+ReAct 的核心循环是"边想边做"——每一步 Thought 之后立刻 Action，获得 Observation 后再想下一步。这很直观，但有一个严重的问题：**每一步的 Observation 都会被塞入上下文，随着步数增加，token 消耗线性膨胀**。
 
-ReWOO 提出了一个反直觉的思路：**先想好所有步骤，再统一执行。**
+ReWOO 提出了一个反直觉的思路：**先想好所有步骤，再统一执行**。
 
 > **ReWOO = Reasoning Without Observation**
 > 2023 年由 Xu 等人提出。核心思想：让 LLM 在**没有 Observation** 的情况下，先规划出完整的推理链（Planner），然后由 Worker 统一执行所有工具调用，最后由 Solver 综合所有结果给出答案。
@@ -175,7 +175,7 @@ Answer                              Solver → Answer
 
 ### ReWOO 代码示例
 
-**Python：**
+**Python**：
 
 ```python
 from openai import OpenAI
@@ -308,7 +308,7 @@ LLM Compiler 提出了**并行执行**的思路：让 LLM 一次性输出多个�
 > 关于多语言示例
 > 本节原文的 TypeScript / Go / Java 版本仅为 Python 的注释占位（`// Python: ...`），并非可运行实现，故此处仅保留完整的 Python 版本。
 
-**Python：**
+**Python**：
 
 ```python
 import asyncio
@@ -451,7 +451,7 @@ Reflect (反思推理) ──生成反思──→ Retry (带着反思重试)
 > 关于多语言示例
 > 本节原文的 TypeScript / Go / Java 版本同样仅为 Python 的注释占位，此处仅保留完整的 Python 版本。
 
-**Python：**
+**Python**：
 
 ```python
 from openai import OpenAI

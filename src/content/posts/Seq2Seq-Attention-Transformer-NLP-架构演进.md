@@ -167,7 +167,7 @@ Decoder 当前状态
 得到当前生成步骤所需的上下文信息
 ```
 
-Attention 的本质就是：**计算当前应该关注哪些位置，以及各自需要关注多少。**
+Attention 的本质就是：**计算当前应该关注哪些位置，以及各自需要关注多少**。
 
 ### 3.3 Attention 解决了什么问题
 
@@ -267,7 +267,7 @@ Self-Attention 让同一序列内部的元素彼此关注：
 
 ### 7.1 Seq2Seq
 
-Seq2Seq 回答的是：**一个序列如何转换成另一个序列？**
+Seq2Seq 回答的是：**一个序列如何转换成另一个序列**？
 
 ```text
 输入序列 → Encoder → Decoder → 输出序列
@@ -275,7 +275,7 @@ Seq2Seq 回答的是：**一个序列如何转换成另一个序列？**
 
 ### 7.2 Attention
 
-Attention 回答的是：**Decoder 生成内容时，应该动态查看输入的哪个位置？**
+Attention 回答的是：**Decoder 生成内容时，应该动态查看输入的哪个位置**？
 
 ```text
 Encoder 的多个隐藏状态 → Attention → Decoder
@@ -283,7 +283,7 @@ Encoder 的多个隐藏状态 → Attention → Decoder
 
 ### 7.3 Transformer
 
-Transformer 进一步回答：**为什么必须依赖 RNN 逐步计算？能否让所有位置通过 Attention 直接建立关系？**
+Transformer 进一步回答：**为什么必须依赖 RNN 逐步计算？能否让所有位置通过 Attention 直接建立关系**？
 
 ```text
 Self-Attention → 建立全局联系 → 高度并行 → Transformer
