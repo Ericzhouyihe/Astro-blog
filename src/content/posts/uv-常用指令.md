@@ -4,7 +4,39 @@ published: 2026-08-11
 description: 'uv常用指令'
 category: 工具、环境与工作流
 ---
-# 全局安装
+# uv创建项目
+
+```shell
+# 1.新建文件夹，进入项目目录
+mkdir my_demo
+cd my_demo
+
+# 2.创建解释器环境
+uv venv --python 3.12
+
+# 3.初始化项目，生成pyproject.toml
+uv init
+# 创建非打包项目
+uv init --no-package
+
+# 4.安装包，自动更新pyproject.toml和uv.lock
+uv add requests
+
+# 5.通过pyproject.toml和uv.lock同步出整套环境
+uv sync
+
+# 6.运行代码
+```shell
+uv run python main.py
+```
+
+如果是激活了虚拟环境，直接用Python命令可以运行
+
+```shell
+python main.py
+```
+
+# 全局安装uv
 Windows环境下, 打开PowerShell
 ```shell
 mkdir D:\APP\uv\bin
@@ -216,39 +248,8 @@ print(torch.version.cuda)
 print(torch.cuda.is_available())
 ```
 
-# uv创建项目
-
-## 在当前文件夹初始化python项目
-```shell
-# 1.新建文件夹，进入项目目录
-mkdir my_demo
-cd my_demo
-
-# 2.创建解释器环境
-uv venv --python 3.12
-
-# 3.初始化项目，生成pyproject.toml
-uv init
-
-# 4.安装包，自动更新pyproject.toml和uv.lock
-uv add requests
-
-# 5.通过pyproject.toml和uv.lock同步出整套环境
-uv sync
-```
-
-# 运行代码
-```shell
-uv run python main.py
-```
-
-如果是激活了虚拟环境，直接用Python命令可以运行
-
-```shell
-python main.py
-```
-
-## 相关阅读
+# 相关阅读
 
 - [Conda 常用指令](./Conda-常用指令.md)
 - [Spec Kit 完整工作流](./Spec-Kit-完整工作流.md)
+
