@@ -26,7 +26,6 @@ uv add requests
 uv sync
 
 # 6.运行代码
-```shell
 uv run python main.py
 ```
 
