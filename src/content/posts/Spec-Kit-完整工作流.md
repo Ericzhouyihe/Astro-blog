@@ -38,7 +38,7 @@ specify version
 
 关于 `uv tool`、工具目录和缓存管理，可参考 [uv 常用指令](./uv-常用指令.md)。
 
-## 2. 在已有项目中初始化
+## 2. 在项目中初始化
 
 进入你的项目：
 
@@ -58,10 +58,10 @@ specify init --here --force
 specify init --here --force --integration codex
 ```
 
-或者：
+只是在软件里使用，没有安装对应的cli，会报错，需要使用--ignore-agent-tools：
 
 ```powershell
-specify init --here --force --integration claude
+specify init --here --force --integration zcode --ignore-agent-tools
 ```
 
 作用是给当前项目加入 Spec Kit 的 `.specify/`、模板、脚本以及对应 AI Agent 的命令文件。`--here` 表示当前目录，`--force` 表示允许初始化到已有文件的项目里。
@@ -73,31 +73,7 @@ specify init --here --force --integration claude
 
 它们是在 Codex、Claude Code、Copilot 等 AI 编程 Agent 的聊天框里输入。
 
-最完整流程是：
-
-```text
-constitution
-    ↓
-specify
-    ↓
-clarify
-    ↓
-plan
-    ↓
-checklist
-    ↓
-tasks
-    ↓
-analyze
-    ↓
-implement
-    ↓
-converge
-```
-
-官方目前把 `clarify / checklist / analyze` 看作质量检查步骤；简单功能可以省略，正式项目建议使用。
-
-具体作用：
+最完整流程及具体作用是：
 
 | 顺序  | 指令                      | 作用                          |
 | --- | ----------------------- | --------------------------- |
@@ -115,15 +91,25 @@ converge
 
 ```text
 /speckit.specify
-```
-
-或者：
-
-```text
 /speckit-specify
 ```
-
 按你的 Agent 初始化后实际显示的命令为准；官方文档也说明命令调用形式会跟 integration 有关。
+
+官方目前把 `clarify / checklist / analyze` 看作质量检查步骤；简单功能可以省略，正式项目建议使用。
+
+如果只是小功能，可以简化成官方核心流程：
+
+```text
+/speckit.specify
+        ↓
+/speckit.plan
+        ↓
+/speckit.tasks
+        ↓
+/speckit.implement
+        ↓
+/speckit.converge
+```
 ### ① `/speckit.constitution`
 
 **一个项目通常执行一次**。
@@ -509,9 +495,7 @@ converge
 
 直到实现和规格完全收敛。
 
----
-
-## 你实际最需要记住的版本
+## 实际最需要记住的版本
 
 第一次在项目中使用时：
 
@@ -549,22 +533,18 @@ specify init --here --force --integration codex
 /speckit.converge
 ```
 
-如果只是小功能，可以简化成官方核心流程：
+| 环节             | 调用话术                                |
+| -------------- | ----------------------------------- |
+| Specify 定义需求   | `按需求规格模板，梳理以下想法：【你的一句话需求】`          |
+| Clarify 澄清需求   | `作为需求专家，审查以下需求，输出待确认问题清单：【需求内容】`    |
+| Plan 设计方案      | `基于以下需求输出技术方案，不写代码：【需求内容】`          |
+| Checklist 方案校验 | `对照需求检查以下方案，输出遗漏和风险：【需求+方案】`        |
+| Tasks 拆任务      | `把以下方案拆成按顺序的开发任务：【方案内容】`            |
+| Analyze 分析问题   | `分析以下问题，给根因和两套方案：【问题描述】`            |
+| Implement 写代码  | `基于现有架构实现以下任务，先讲思路再给代码：【任务内容+已有代码】` |
+| Converge 验收    | `对照原始需求验收以下实现，给出结论：【需求+实现内容】`       |
 
-```text
-/speckit.specify
-        ↓
-/speckit.plan
-        ↓
-/speckit.tasks
-        ↓
-/speckit.implement
-        ↓
-/speckit.converge
-```
-
-一句话记忆就是：
+总结：
 
 > **Constitution 定规矩 → Specify 定需求 → Clarify 问清楚 → Plan 定方案 → Checklist 查需求 → Tasks 拆任务 → Analyze 查矛盾 → Implement 写代码 → Converge 验收**。
->
 
