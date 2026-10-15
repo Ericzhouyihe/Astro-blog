@@ -34,7 +34,10 @@ uv tool install specify-cli
 specify version
 ```
 
-这个只需要安装一次。
+这个只需要安装一次。后续更新：
+```PowerShell
+uv tool install --force specify-cli
+```
 
 关于 `uv tool`、工具目录和缓存管理，可参考 [uv 常用指令](./uv-常用指令.md)。
 
