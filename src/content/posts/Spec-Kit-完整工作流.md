@@ -37,6 +37,21 @@ specify version
 这个只需要安装一次。后续更新：
 ```PowerShell
 uv tool install --force specify-cli
+
+# 1. 检查 CLI 版本
+specify version
+
+# 2. 查看项目已安装的集成
+specify integration status
+
+# 3. 更新 Codex 对应的 Skills
+specify integration upgrade codex
+
+# 4. 如果还用了 Claude Code
+specify integration upgrade claude
+
+# 5. 如果安装过 Spec Kit 扩展
+specify extension update
 ```
 
 关于 `uv tool`、工具目录和缓存管理，可参考 [uv 常用指令](./uv-常用指令.md)。
