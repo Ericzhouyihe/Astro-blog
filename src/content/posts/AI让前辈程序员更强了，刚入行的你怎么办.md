@@ -40,7 +40,7 @@ url: https://mp.weixin.qq.com/s/kOHAEei-dYaa4mXO1XA9OQ
 
 AI给出一个方案，他会追问： **为什么这样拆分？数据量上来会怎样？权限有没有漏？出了问题，能不能定位** ？这些判断，不是AI出现之后才有的。它们来自过去解决过的问题，踩过的坑，以及那些并不轻松的返工。
 
-![图片](https://mmbiz.qpic.cn/sz_mmbiz_jpg/gib5zl5ldEAuz4owLxUjExTyOMj3P3ZAcRF8ftXG2nVZ6ZM1CBG21ljuTrTqJjnxKdOzz2pibia8Yy0fybh3wfA0DVJicxRzKHZA17trlsW07do/640?wx_fmt=jpeg&from=appmsg&watermark=1#imgIndex=0)
+![同样在用AI，得到的东西可能不一样（信息图）](assets/AI让前辈程序员更强了，刚入行的你怎么办/同样在用AI，得到的东西可能不一样.jpg)
 
 所以，AI像一根杠杆，把他原有的能力放大了。但新人手里，可能还没有那把尺。
 
@@ -64,7 +64,7 @@ AI给出一个方案，他会追问： **为什么这样拆分？数据量上来
 
 这些能力，以前常常在查资料、写代码、调试的过程中慢慢形成。
 
-![图片](https://mmbiz.qpic.cn/mmbiz_jpg/gib5zl5ldEAuHiaDE7R6XNNXbTsVwRibWibbGEsApSgwMUibfY6y2Gn1HJjkc2fA63PgxcJySX7Bzl3gog6XKqlyJc4MXOAibLSFqh6zGTmxYsaDY/640?wx_fmt=jpeg&from=appmsg&watermark=1#imgIndex=1)
+![真正值得保留的能力（信息图）](./assets/AI让前辈程序员更强了，刚入行的你怎么办/真正值得保留的能力.jpg)
 
 如今，AI可以替我们完成其中很多步骤。如果我们只是接过结果，这段学习就可能悄悄消失。最让人担忧的，不是少写了几百行代码，而是几年以后，我们做过很多项目，却仍然没有建立起自己的判断。
 
@@ -78,7 +78,7 @@ AI给出一个方案，他会追问： **为什么这样拆分？数据量上来
 
 这些追问，未必立刻让你交付得更快。但它们会让下一次的你，比这一次多一点底气。
 
-![图片](https://mmbiz.qpic.cn/sz_mmbiz_jpg/gib5zl5ldEAt3BWHib6OfsB2iavOcs1dOibGy8RgSxvINr1oKaT568SaCZmqUL3VBxJwz034z70ctiaR2j4keUibtgwsOUaKic6UJbQQ2Islahiclsc/640?wx_fmt=jpeg&from=appmsg&watermark=1#imgIndex=2)
+![不要满足于“做完了”（信息图）](./assets/AI让前辈程序员更强了，刚入行的你怎么办/不要满足于做完了.jpg)
 
 **AI可以帮你把事情做完，但对问题的理解，需要你亲自建立** 。
 
@@ -108,7 +108,7 @@ AI给出一个方案，他会追问： **为什么这样拆分？数据量上来
 
 这一小步的完成标准：你能举出一个正常例子和一个异常例子，并说明期待的结果。
 
-![图片](https://mmbiz.qpic.cn/mmbiz_jpg/gib5zl5ldEAvmia3QRlDhJyx9CqSM9Vb3Fyghw1ZzICzvOQVMK69xktt88zEm1arqnXbMCepSl2cJsNyQpN1iaL9eX5moWuj1LLX2dc6kbVqWM/640?wx_fmt=jpeg&from=appmsg&watermark=1#imgIndex=3)
+![六步练习法·第一步：把问题写清楚（信息图）](./assets/AI让前辈程序员更强了，刚入行的你怎么办/第一步-把问题写清楚.jpg)
 
 权限这类规则不能只靠页面隐藏实现，服务端也需要校验。把这样的约束说清楚，本身就在训练工程判断。
 
@@ -126,7 +126,7 @@ AI给出一个方案，他会追问： **为什么这样拆分？数据量上来
 
 完成标准：你能说明为什么选这个方案，以及它暂时不解决什么问题。
 
-![图片](https://mmbiz.qpic.cn/mmbiz_png/gib5zl5ldEAuUwH7qk8TRm7rq4mGribpz8fhayiaRA9MxiaWCXicMuzLicxgl0Na9XA2EWTf5ibLE6COOta4JAjobcNiaZ6iblicxkmYIThK4wSEtlupM/640?wx_fmt=png&from=appmsg&watermark=1#imgIndex=4)
+![六步练习法·第二步与第三步：先写方案再拆小任务（信息图）](./assets/AI让前辈程序员更强了，刚入行的你怎么办/第二步与第三步-先写方案再拆小任务.png)
 
 **第三步：把任务拆小，一次只让AI改一块**
 
@@ -160,7 +160,7 @@ AI给出一个方案，他会追问： **为什么这样拆分？数据量上来
 
 修复错误时，尽量保留一个能复现原问题的检查：修改前失败，修改后通过。这比“看起来好了”更有说服力。
 
-![图片](https://mmbiz.qpic.cn/mmbiz_jpg/gib5zl5ldEAuoibAOllNiaaV9B4gd7GcenhNViczhzRIOpfav03QgTW4nkn4kooh0ic1tayZBIuxYG1XF1ibcGmdzsgiaKO5V8TNRPtUB8B0H2v5Zs/640?wx_fmt=jpeg&from=appmsg&watermark=1#imgIndex=5)
+![六步练习法·第四步：自己读代码设计验证（信息图）](./assets/AI让前辈程序员更强了，刚入行的你怎么办/第四步-自己读代码设计验证.jpg)
 
 完成标准：至少验证正常流程、关键边界和相关回归；你能拿出运行结果，而不只是AI的保证。
 
@@ -170,7 +170,7 @@ AI给出一个方案，他会追问： **为什么这样拆分？数据量上来
 
 完成标准：离开AI的回答，你仍然能解释核心逻辑，并完成一个同类的小变化。
 
-![图片](https://mmbiz.qpic.cn/mmbiz_jpg/gib5zl5ldEAtpIQIVicnK4tyo7xFL6bibXrKx4SarW9vTusibb5L0zAFYLR35sfrSRBKzkiaTHBU8jPflIib4ib8FyJbGaqTSMZCuiaZicmQ6EkaQO74/640?wx_fmt=jpeg&from=appmsg&watermark=1#imgIndex=6)
+![六步练习法·第五步与第六步：讲一遍再留记录（信息图）](./assets/AI让前辈程序员更强了，刚入行的你怎么办/第五步与第六步-讲一遍再留记录.jpg)
 
 **第六步：花五分钟，留下自己的记录**
 
@@ -186,7 +186,7 @@ AI给出一个方案，他会追问： **为什么这样拆分？数据量上来
 
 如果你不知道从哪里开始，可以选一个“小任务管理”练习项目，连续做四周。工作中的同学，也可以用获准的小任务替代，不需要额外做一个大项目。
 
-![图片](https://mmbiz.qpic.cn/sz_mmbiz_jpg/gib5zl5ldEAtBTLxPzX80icSRhmeFvTic68hTIm9OW8ufrMQBgFHya0L6LMkWhRQibRbkYAmSJcib7pO0Nkhic7TPHmzZicyBJgeT7W21zfY6kSvVo/640?wx_fmt=jpeg&from=appmsg&watermark=1#imgIndex=7)
+![四周练习计划表（信息图）](./assets/AI让前辈程序员更强了，刚入行的你怎么办/四周练习计划表.jpg)
 
 **不要把“用了多少AI”“写了多少行代码”当成成绩** 。
 
@@ -208,7 +208,7 @@ AI给出一个方案，他会追问： **为什么这样拆分？数据量上来
 
 你可以从数据库、测试、前端交互、系统稳定性，或者一个行业的业务流程开始。找一块愿意长期琢磨的地方，把常见问题弄懂，把关键细节做好。
 
-![图片](https://mmbiz.qpic.cn/mmbiz_jpg/gib5zl5ldEAttCsQquLHWqovroLJxNibyHqTmb6MassY6aliaciciaU0KLhicZH6c6Kj2960yDib7TKtuEEiaic3SyrbciblbZd9S0TPHC09O4ZJsXw6I/640?wx_fmt=jpeg&from=appmsg&watermark=1#imgIndex=8)
+![未来的路：深耕与耐心（信息图）](./assets/AI让前辈程序员更强了，刚入行的你怎么办/未来的路-深耕与耐心.jpg)
 
 **所谓匠人，也许不是不用先进工具的人，而是工具越来越先进之后，仍然愿意对质量负责的人。知道什么地方可以快，也知道什么地方不能省。**
 
@@ -230,7 +230,7 @@ AI给出一个方案，他会追问： **为什么这样拆分？数据量上来
 
 它们只是你下一步可以学习的地方。
 
-![图片](https://mmbiz.qpic.cn/mmbiz_jpg/gib5zl5ldEAs9kQiaDfEOSY1x55ZDibGUCuJX0pr6cIKLqLDDzSjlCicgHT373TGhYLo4NFcS0oE7Mia0xxxjGO1ibB3kHqNNru9rYLJ7zLlHMTdc/640?wx_fmt=jpeg&from=appmsg&watermark=1#imgIndex=9)
+![成长需要时间，并不丢人（信息图）](./assets/AI让前辈程序员更强了，刚入行的你怎么办/成长需要时间并不丢人.jpg)
 
 用AI帮自己走快一点，也给自己留一点停下来想明白的时间。去读，去试，去追问，去认真解决一个属于你的问题。
 
@@ -240,3 +240,7 @@ AI给出一个方案，他会追问： **为什么这样拆分？数据量上来
 
 如果这篇文章对你有帮助，  
 欢迎分享给身边正在成长中的技术同学。
+
+---
+
+> 相关笔记：[Spec-Kit 完整工作流：从需求规格到代码实现](Spec-Kit-完整工作流.md) —— 与本文六步练习法（写清问题 → 方案 → 拆任务 → 验证）相对应的规范驱动开发（SDD）落地实践。
