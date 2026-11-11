@@ -1,6 +1,9 @@
 .claude
 .obsidian
 .claudian
+# Copilot for Obsidian: plugin cache, installed skills and chat history
+.copilot
+src/content/posts/copilot
 src/content/posts/template/*
 
 dist
