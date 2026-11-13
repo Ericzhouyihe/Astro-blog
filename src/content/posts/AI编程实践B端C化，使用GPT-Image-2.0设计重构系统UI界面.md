@@ -1,7 +1,7 @@
 ---
 title: AI编程实践，B端C化，使用GPT-Image-2.0设计重构系统UI界面
 published: 2026-04-28
-category: 职业成长
+category: 外部文章
 tags:
   - AI编程
   - UI设计
@@ -11,8 +11,7 @@ tags:
 description: 介绍B端C化的设计理念，并实操演示一条AI驱动的UI设计流水线：用ClaudeCode生成原型项目，GPT-Image-2.0生成高保真UI设计稿与设计规范，再借助Google Stitch、Trae等工具将规范还原为可落地的前端代码。
 ---
 
-> 转载自微信公众号「无处不在的技术」，2026-04-28 发布，核心观点与素材版权归原作者所有。
-> url: https://mp.weixin.qq.com/s/cJufFFkubZtd4TaVmSv_2A
+> 引用自：微信公众号「无处不在的技术」 · [AI编程实践，B端C化，使用GPT-Image-2.0设计重构系统UI界面](https://mp.weixin.qq.com/s/cJufFFkubZtd4TaVmSv_2A)
 
 **01**
 
