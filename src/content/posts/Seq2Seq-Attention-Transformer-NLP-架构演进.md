@@ -1,4 +1,4 @@
-﻿---
+---
 title: "从 Seq2Seq、Attention 到 Transformer：NLP 架构演进"
 published: 2026-09-12
 category: 机器学习与深度学习
